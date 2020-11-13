@@ -4,10 +4,29 @@ from tkinter import *
 def limpiarcampos():
     numA.set(0)
     numB.set(0)
+
 def sumar():
     numeroA=numA.get()
     numeroB=numB.get()
     resultado= numeroA+numeroB
+    Res.set(resultado)
+    limpiarcampos()
+def restar():
+    numeroA = numA.get()
+    numeroB = numB.get()
+    resultado = numeroA - numeroB
+    Res.set(resultado)
+    limpiarcampos()
+def multiplicar():
+    numeroA = numA.get()
+    numeroB = numB.get()
+    resultado = numeroA * numeroB
+    Res.set(resultado)
+    limpiarcampos()
+def dividir():
+    numeroA = numA.get()
+    numeroB = numB.get()
+    resultado = numeroA / numeroB
     Res.set(resultado)
     limpiarcampos()
 #Creacion de ventana
@@ -37,7 +56,14 @@ Res=IntVar()
 salidaRES=Entry(ventana, textvariable=Res)
 salidaRES.place(x=70,y=60)
 
-botontransportar=Button(ventana, text="Sumar A y B:", command=sumar)
+botontransportar=Button(ventana, text="Sumar", command=sumar)
 botontransportar.place(x=0,y=90)
+botontransportar=Button(ventana, text="Restar", command=restar)
+botontransportar.place(x=0,y=120)
+botontransportar=Button(ventana, text="Multiplicar", command=multiplicar)
+botontransportar.place(x=0,y=150)
+botontransportar=Button(ventana, text="Dividir", command=dividir)
+botontransportar.place(x=0,y=180)
+
 
 ventana.mainloop()
